@@ -652,9 +652,9 @@ const T = { nl:{}, en:{
 }};
 const MSG = {
  nl:{missing:"Vul je naam, een geldig e-mailadres, een datum en het aantal personen in.", noEmail:"Online boeken staat nog niet aan. Je aanvraag is niet verstuurd.",
-     sending:"Versturen…", ok:"Aanvraag verstuurd. We nemen contact met je op.", fail:"Je aanvraag kon niet worden verstuurd. Controleer je verbinding en probeer het opnieuw."},
+     sending:"Versturen…", ok:"Aanvraag verstuurd. We nemen contact met je op.", fail:"Je aanvraag kon niet worden verstuurd. Probeer het later opnieuw, of mail je aanvraag naar lantiwee.cottica@gmail.com."},
  en:{missing:"Please fill in your name, a valid email, a date and the number of people.", noEmail:"Online booking is not switched on yet. Your request was not sent.",
-     sending:"Sending…", ok:"Request sent. We will get in touch with you.", fail:"Your request could not be sent. Check your connection and try again."}
+     sending:"Sending…", ok:"Request sent. We will get in touch with you.", fail:"Your request could not be sent. Please try again later, or email your request to lantiwee.cottica@gmail.com."}
 };
 const HTML_KEYS = new Set(["f1v","f2v","f3v","f4v","f5v","f6v","f7v","f8v"]);
 let lang = "nl";
@@ -690,7 +690,9 @@ form.addEventListener("submit", async e => {
   data._replyto = data.email; data._template = "table"; data.language = lang;
   send.disabled = true; show("", "sending");
   try {
-    const r = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(BOOKING_EMAIL), {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(data)});
+    const ctl = new AbortController(); const to = setTimeout(() => ctl.abort(), 20000);
+    const r = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(BOOKING_EMAIL), {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(data), signal:ctl.signal});
+    clearTimeout(to);
     const j = await r.json().catch(() => ({}));
     if (!r.ok || String(j.success) === "false") throw new Error();
     form.reset(); show("ok","ok");
