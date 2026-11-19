@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantiwee – Dagtour vanuit Paramaribo, geleid door bewoners</title>
+<meta name="description" content="Boek een dagtour naar Lantiwee, een Okanisi Fiimandorp aan de Cottica. Geleid door de bewoners zelf; de opbrengst gaat naar de ontwikkeling van het dorp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --ink:#12261d; --muted:#51655a; --bg:#f3f7f1; --soft:#e7efe8; --line:#cfdcd2; --white:#fff;
+  --forest:#0f4a34; --deep:#0a3324; --sun:#f2b705; --river:#1746a2; --red:#c8321f; --on-dark:#f3f7f1;
+  --head:"Jost","Trebuchet MS",sans-serif; --label:"Montserrat",system-ui,sans-serif;
+  --body:"Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 var(--body);letter-spacing:.015em}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
+h1,h2,h3{font-family:var(--head);font-weight:500;text-transform:uppercase;line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(2rem,4.6vw,3.2rem);letter-spacing:.01em}
+h2{font-size:clamp(1.65rem,3.4vw,2.2rem)}
+h3{font-size:1.12rem}
+p{margin:0}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.eyebrow{font:700 .74rem var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
+.kicker{font:700 .74rem var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--forest)}
+
+/* photos */
+.ph{position:relative;background:linear-gradient(135deg,#2c5a43,#123526);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph .soon{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:16px;color:rgba(255,255,255,.85);font:600 .78rem var(--label);letter-spacing:.08em;text-transform:uppercase}
+.ph .soon span{border:1px dashed rgba(255,255,255,.5);padding:10px 14px}
+.bgimg{background-size:cover;background-position:center}
+
+/* top + header */
+.topbar{background:var(--deep);color:#c9d8ce;font-size:.82rem}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-block:7px;flex-wrap:wrap}
+header.nav{position:sticky;top:0;z-index:30;background:rgba(15,74,52,.97);border-bottom:1px solid rgba(255,255,255,.12)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:11px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+.logo .mark{width:42px;height:42px;border:2px solid var(--sun);display:grid;place-items:center;font:500 1.35rem var(--head)}
+.logo .name{display:flex;flex-direction:column;line-height:1.05}
+.logo .name b{font:500 1.3rem var(--head);letter-spacing:.12em;text-transform:uppercase}
+.logo .name span{font:400 .66rem var(--body);letter-spacing:.3em;text-transform:uppercase;color:#c9d8ce}
+.menu{display:flex;align-items:center;gap:24px}
+.menu a{color:var(--on-dark);text-decoration:none;font:700 .74rem var(--body);letter-spacing:.06em;text-transform:uppercase}
+.menu a:hover{color:var(--sun)}
+.menu a.btn,.menu a.btn:hover{color:var(--ink)}
+.lang{display:flex;gap:2px}
+.lang button{font:700 .7rem var(--label);letter-spacing:.08em;padding:6px 9px;border:1px solid rgba(255,255,255,.4);background:transparent;color:#e8f0ea;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+@media (max-width:900px){.menu a:not(.btn){display:none}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.produce{grid-template-columns:repeat(2,minmax(0,1fr))}.logo .name span{display:none}.topbar span+span{display:none}.menu{gap:10px}.menu a.btn{padding:11px 12px;font-size:.68rem}header.nav .wrap{padding-inline:16px;gap:10px}.logo .mark{width:36px;height:36px}}
+body{overflow-wrap:break-word}
+
+/* buttons */
+.btn{display:inline-block;font:700 .76rem var(--label);letter-spacing:.07em;text-transform:uppercase;padding:14px 22px;border:0;border-radius:4px;cursor:pointer;background:var(--sun);color:var(--ink);text-decoration:none}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.85)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.dark{background:var(--forest);color:#fff}
+
+/* hero */
+.hero{position:relative;min-height:min(92vh,780px);display:grid;place-items:center;text-align:center;color:#fff}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(10,51,36,.35),rgba(10,51,36,.68))}
+.hero .in{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px;padding:90px 24px 70px;max-width:900px}
+.hero .sub{font-style:italic;font-size:clamp(1.05rem,2vw,1.3rem);max-width:58ch}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.badges span{font:700 .7rem var(--label);letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}
+.stripe{height:14px;background:repeating-linear-gradient(90deg,var(--red) 0 40px,var(--sun) 40px 50px,var(--river) 50px 90px,#fff 90px 94px,var(--forest) 94px 124px)}
+
+section{padding-block:88px}
+.center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.intro{max-width:70ch;color:var(--muted);font-size:1.03rem}
+
+.about{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:48px;margin-top:20px;text-align:left;width:100%;align-items:start}
+.about-txt{display:flex;flex-direction:column;gap:14px;color:var(--muted)}
+.about-facts{background:var(--white);border-top:4px solid var(--forest);padding:8px 22px}
+.about-facts div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.about-facts div:last-child{border-bottom:0}
+.about-facts dt{font:700 .7rem var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--forest);padding-top:3px}
+.about-facts dd{margin:0;font-weight:600;text-align:right}
+@media (max-width:760px){.about{grid-template-columns:minmax(0,1fr);gap:24px}}
+.band{position:relative;height:min(62vh,560px);min-height:300px}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(10,51,36,.55))}
+.bandcap{position:absolute;left:24px;bottom:20px;z-index:1;color:#fff;font:500 1.05rem var(--head);text-transform:uppercase;letter-spacing:.06em}
+.bgsec{padding-block:60px}
+.bgsec h2{font-size:clamp(1.35rem,2.6vw,1.7rem)}
+.about-head{background:var(--forest);color:#fff;padding:44px 0 40px;text-align:center}
+.about-head .wrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+.about-head p{color:#d9e6dd;max-width:62ch}
+.about-head nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.about-head nav a{color:#fff;text-decoration:none;font:700 .72rem var(--label);letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.4);padding:8px 14px;border-radius:999px}
+.about-head nav a:hover{background:rgba(255,255,255,.12)}
+.cta-row{margin-top:36px;display:flex;justify-content:center}
+/* three pillars */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;margin-top:44px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:left;width:100%}
+.pillars div{padding:26px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.pillars div:last-child{border-right:0}
+.pillars b{font:500 1.05rem var(--head);text-transform:uppercase}
+.pillars p{color:var(--muted);font-size:.95rem}
+.pillars i{font-style:normal;font:700 .7rem var(--label);letter-spacing:.12em;color:var(--red)}
+
+/* activities */
+.tour{background:var(--white)}
+.acts{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:48px;text-align:left}
+.act{background:var(--bg);display:flex;flex-direction:column;border-top:4px solid var(--river)}
+.act:nth-child(4n+2){border-color:var(--red)} .act:nth-child(4n+3){border-color:var(--sun)} .act:nth-child(4n+4){border-color:var(--forest)}
+.act .ph{aspect-ratio:4/3}
+.act .txt{padding:22px 22px 26px;display:flex;flex-direction:column;gap:8px}
+.act .num{font:700 .7rem var(--label);letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.act p{color:var(--muted);font-size:.95rem}
+
+.ledby{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;background:var(--forest);color:#fff;text-align:left}
+.ledby .ph{min-height:320px}
+.ledby .txt{padding:40px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.ledby .txt p{color:#d9e6dd}
+.ledby ul{margin:0;padding-left:18px;color:#d9e6dd}
+.ledby li{margin:4px 0}
+
+.dayflow{margin-top:56px;width:100%;text-align:left}
+.dayflow ol{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;border-top:3px solid var(--forest)}
+.dayflow li{padding:18px 16px 4px;position:relative}
+.dayflow li::before{content:"";position:absolute;top:-9px;left:16px;width:15px;height:15px;border-radius:50%;background:var(--sun);border:3px solid var(--forest)}
+.dayflow li b{display:block;font:700 .72rem var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--forest);margin-bottom:4px}
+.dayflow li span{color:var(--muted);font-size:.93rem}
+.note{font-size:.88rem;color:var(--muted);font-style:italic;margin-top:14px}
+
+/* history */
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:start}
+.split .txt{display:flex;flex-direction:column;gap:16px}
+.split .txt p{color:var(--muted)}
+.timeline{border-left:3px solid var(--forest);margin:8px 0 0;padding:0 0 0 22px;list-style:none;display:flex;flex-direction:column;gap:18px}
+.timeline li{position:relative}
+.timeline li::before{content:"";position:absolute;left:-30px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--sun);border:3px solid var(--forest)}
+.timeline b{display:block;font:700 .72rem var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--forest)}
+.timeline span{color:var(--muted);font-size:.95rem}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gallery .ph{aspect-ratio:1/1}
+.gallery .ph.wide{grid-column:1/-1;aspect-ratio:16/9}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:.78rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6))}
+
+/* harvest */
+.harvest{background:var(--white)}
+.produce{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px;width:100%}
+.produce div{background:var(--bg);border-left:4px solid var(--sun);padding:16px 16px 14px;text-align:left}
+.produce div:nth-child(3n+2){border-color:var(--red)} .produce div:nth-child(3n+3){border-color:var(--forest)}
+.produce b{display:block;font:500 1.02rem var(--head);text-transform:uppercase}
+.produce span{font-size:.84rem;color:var(--muted)}
+.crops{display:flex;flex-direction:column;gap:32px;margin-top:36px;width:100%;text-align:left}
+.crop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.crop.rev .cimg{order:2}
+.cimg{display:flex;justify-content:center}
+.cimg img{width:auto;max-width:100%;max-height:400px;height:auto;border-bottom:6px solid var(--sun)}
+.ctxt{display:flex;flex-direction:column;gap:12px;max-width:46ch}
+.ctxt p{color:var(--muted)}
+@media (max-width:760px){.crop{grid-template-columns:minmax(0,1fr);gap:20px}.crop.rev .cimg{order:0}.cimg img{max-height:none;width:100%}}
+.honest{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center;text-align:left;width:100%}
+.honest .ph{aspect-ratio:4/3;max-width:480px}
+.honest .txt{display:flex;flex-direction:column;gap:16px}
+.honest .txt p{color:var(--muted)}
+
+.future{background:var(--soft)}
+.fut-grid{display:grid;grid-template-columns:minmax(0,1fr);margin-top:28px}
+.plans ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:700px){.plans ul{grid-template-columns:minmax(0,1fr)}}
+.fut-img{aspect-ratio:4/3}
+.plans{display:flex;flex-direction:column;gap:16px}
+.plans ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.plans li{background:var(--white);padding:11px 14px 11px 16px;border-left:4px solid var(--sun);font-size:.96rem}
+.plans li:nth-child(3n+2){border-color:var(--river)} .plans li:nth-child(3n+3){border-color:var(--red)}
+.plans p{color:var(--muted)}
+.fund{margin-top:28px;background:var(--forest);color:#fff;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:6px solid var(--sun)}
+.fund div{display:flex;flex-direction:column;gap:8px;max-width:60ch}
+.fund p{color:#d9e6dd}
+@media (max-width:760px){.fut-grid{grid-template-columns:minmax(0,1fr);gap:24px}.fund{padding:26px 22px}}
+/* practical */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1px solid var(--line);width:100%;text-align:left}
+.facts div{padding:20px 18px;border-bottom:1px solid var(--line)}
+.facts dt{font:700 .7rem var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--forest);margin-bottom:4px}
+.facts dd{margin:0;font-weight:600}
+.facts dd small{display:block;font-weight:400;color:var(--muted);font-size:.86rem}
+dl{margin:0}
+
+/* booking */
+.book{position:relative;color:#fff}
+.book::after{content:"";position:absolute;inset:0;background:rgba(10,51,36,.82)}
+.book .wrap{position:relative;z-index:1;display:grid;gap:48px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+.book .side{display:flex;flex-direction:column;gap:16px;padding-top:12px}
+.book .side p{color:#e3ece6;max-width:44ch}
+.book .side ul{margin:0;padding-left:18px;color:#e3ece6}
+.formcard{background:#fff;color:var(--ink);padding:32px;border-radius:6px;border-top:6px solid var(--sun)}
+form{display:grid;gap:16px;grid-template-columns:1fr 1fr;min-width:0}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f.full{grid-column:1/-1}
+label{font:700 .7rem var(--label);letter-spacing:.08em;text-transform:uppercase}
+input,textarea{font:400 1rem var(--body);padding:11px 12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%}
+input:focus,textarea:focus{border-color:var(--forest);outline:none}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+.status{grid-column:1/-1;padding:12px 14px;font-weight:600;border-left:4px solid var(--line);background:var(--soft)}
+.status.ok{border-color:var(--forest)} .status.err{border-color:var(--red)}
+form .btn{grid-column:1/-1;justify-self:start}
+form .btn[disabled]{opacity:.6;cursor:wait}
+@media (max-width:540px){form{grid-template-columns:1fr}.formcard{padding:22px}.ledby .txt{padding:28px}}
+
+footer{background:var(--deep);color:#c9d8ce;font-size:.9rem}
+footer .wrap{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding-block:56px}
+footer h4{font:700 .74rem var(--label);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin:0 0 12px}
+footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
+.credits{border-top:1px solid rgba(255,255,255,.12)}
+.credits .wrap{padding-block:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px}
+.credits h4{margin:0}
+.credits p{margin:0;font-size:.88rem}
+.credits ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px}
+.credits li{display:flex;flex-direction:column;line-height:1.3}
+.credits li b{color:#fff;font-weight:600;font-size:.9rem}
+.credits li span{font-size:.78rem;color:#9db3a6}
+.legal{border-top:1px solid rgba(255,255,255,.12);text-align:center;font:600 .66rem var(--label);letter-spacing:.12em;text-transform:uppercase;padding:18px 24px;color:#9db3a6}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span data-i18n="top1">Dagtour vanuit Paramaribo · geleid door de bewoners van Lantiwee</span>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top"><span class="mark">L</span><span class="name"><b>Lantiwee</b><span>Suriname</span></span></a>
+  <nav class="menu" aria-label="Menu">
+    <a href="#dagtour" data-i18n="m1">De dagtour</a>
+    <a href="#praktisch" data-i18n="m4">Praktisch</a>
+    <a href="#over" data-i18n="m7">Over Lantiwee</a>
+    <a href="#boeken" class="btn" data-i18n="m5">Boek de dagtour</a>
+    <div class="lang" role="group" aria-label="Taal / Language">
+      <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </nav>
+</div></header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero bgimg" style="background-image:url('images/IMG_7941.jpg')" role="img" aria-label="De Cottica-rivier bij Lantiwee met kano's aan de oever" data-i18n-aria="heroAlt">
+  <div class="in">
+    <span class="eyebrow" data-i18n="eyebrow">De enige dagtour aan de Cottica</span>
+    <h1 data-i18n="h1">Eén dag in Lantiwee, met de mensen die er wonen</h1>
+    <p class="sub" data-i18n="lead">Vaar vanuit Wanhatti over de Cottica en beleef het dorp met de mensen die er wonen. Je dag wordt helemaal door bewoners begeleid.</p>
+    <div class="cta">
+      <a class="btn" href="#boeken" data-i18n="cta1">Boek de dagtour</a>
+      <a class="btn ghost" href="#dagtour" data-i18n="cta2">Bekijk het programma</a>
+    </div>
+    <div class="badges">
+      <span data-i18n="b1">1 dag · heen en terug</span>
+      <span data-i18n="b2">Geleid door bewoners</span>
+      <span data-i18n="b3">Boottocht over de Cottica</span>
+    </div>
+  </div>
+</div>
+<div class="stripe" aria-hidden="true"></div>
+
+<!-- WHAT IS IT -->
+<section>
+  <div class="wrap center">
+    <span class="kicker" data-i18n="k0">Welkom in Lantiwee</span>
+    <h2 data-i18n="introH">Een dorp aan de Cottica</h2>
+    <div class="about">
+      <div class="about-txt">
+        <p data-i18n="ab1">Lantiwee is een klein Okanisi Fiimandorp aan de oever van de Cottica-rivier, in het district Marowijne. Het dorp ligt midden in tropisch regenwoud, op ongeveer twee uur van Paramaribo: over de verharde weg naar Tamarin en daarna over een zandweg, of per boot vanuit Wanhatti.</p>
+        <p data-i18n="ab1b">De Cottica geldt als de diepste rivier van Suriname en verbindt de Fiimandorpen van de Bilowataa-regio. Na de Binnenlandse Oorlog keerden bewoners terug en bouwden het dorp weer op. Vandaag wonen er zo'n 25 mensen, en voor het eerst ontvangen zij ook bezoekers.</p>
+      </div>
+      <dl class="about-facts">
+        <div><dt data-i18n="af1k">Rivier</dt><dd data-i18n="af1v">Cottica</dd></div>
+        <div><dt data-i18n="af2k">District</dt><dd data-i18n="af2v">Marowijne</dd></div>
+        <div><dt data-i18n="af3k">Regio</dt><dd data-i18n="af3v">Bilowataa</dd></div>
+        <div><dt data-i18n="af4k">Vanaf Paramaribo</dt><dd data-i18n="af4v">Ongeveer 2 uur</dd></div>
+        <div><dt data-i18n="af5k">Bewoners</dt><dd data-i18n="af5v">Zo'n 25, en groeiend</dd></div>
+      </dl>
+    </div>
+        <div class="pillars">
+      <div><i>01</i><b data-i18n="p1h">Eén volle dag</b><p data-i18n="p1p">'s Ochtends vertrek je uit Paramaribo, aan het eind van de middag ben je terug. Geen overnachting nodig.</p></div>
+      <div><i>02</i><b data-i18n="p2h">Geleid door bewoners</b><p data-i18n="p2p">Je gidsen, koks en vissers wonen zelf in Lantiwee. Zij vertellen hun eigen verhaal.</p></div>
+      <div><i>03</i><b data-i18n="p3h">Op het ritme van het dorp</b><p data-i18n="p3p">Geen standaard showprogramma: elke tour is anders en laat zien hoe het dorp echt leeft.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band bgimg" style="background-image:url('images/IMG_0048.jpg');background-position:center 80%" role="img" aria-label="De steiger aan de Cottica bij Lantiwee" data-i18n-aria="band1Alt"><span class="bandcap" data-i18n="band1">De steiger aan de Cottica</span></div>
+
+<!-- TOUR -->
+<section class="tour" id="dagtour">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="k1">De dagtour</span>
+    <h2 data-i18n="tourH">Wat je kunt doen</h2>
+    <p class="intro" style="font-weight:600;color:var(--forest)" data-i18n="tourUnique">Dit is de enige dagtour aan de Cottica.</p>
+    <p class="intro" data-i18n="tourP">Dit zijn de activiteiten die de bewoners aanbieden. Elke tour is net even anders: het programma stemmen we vooraf met de bewoners af, zodat je een dag krijgt die echt door het dorp wordt gedragen.</p>
+
+    <div class="acts">
+      <article class="act">
+        <div class="ph"><img src="images/IMG_7967.jpg" alt="Bezoekers in een korjaal op de rivier" data-i18n-alt="alt1"></div>
+        <div class="txt"><span class="num" data-i18n="n1">Activiteit</span><h3 data-i18n="a1h">Boottocht vanuit Wanhatti</h3><p data-i18n="a1p">Vanuit Wanhatti vaar je in een korjaal over de Cottica naar Lantiwee. Je vaart over de diepste rivier van Suriname, langs het regenwoud op de oevers en, met een beetje geluk, vogels boven het water.</p></div>
+      </article>
+      <article class="act">
+        <div class="ph"><img src="images/IMG_7888.jpg" alt="Huizen en een overkapping in het dorp" data-i18n-alt="alt2"></div>
+        <div class="txt"><span class="num" data-i18n="n2">Activiteit</span><h3 data-i18n="a2h">Tour door het dorp en de plantages</h3><p data-i18n="a2p">Een bewoner neemt je mee langs de huizen, de oude plekken en de kostgronden. Je hoort wat er groeit en hoe het dorp leeft.</p></div>
+      </article>
+      <article class="act">
+        <div class="ph"><img src="images/IMG_7937.jpg" alt="Een korjaal op de rivier bij het dorp" data-i18n-alt="alt3"></div>
+        <div class="txt"><span class="num" data-i18n="n3">Activiteit</span><h3 data-i18n="a3h">Vissen</h3><p data-i18n="a3p">Vis mee zoals de bewoners dat al generaties doen: vanaf de oever of vanuit de boot, met de kennis van mensen die deze rivier door en door kennen.</p></div>
+      </article>
+      <article class="act">
+        <div class="ph"><div class="soon"><span data-i18n="soonCas">Foto volgt: cassavebrood bakken</span></div></div>
+        <div class="txt"><span class="num" data-i18n="n4">Activiteit</span><h3 data-i18n="a4h">Cassavebrood maken</h3><p data-i18n="a4p">Van knol tot brood: je raspt, perst en bakt cassave op de traditionele manier. Een vaardigheid die in het dorp van ouder op kind wordt doorgegeven.</p></div>
+      </article>
+      <article class="act">
+        <div class="ph"><img src="images/IMG_0010.jpg" alt="Gevlochten manden van het dorp" data-i18n-alt="alt5"></div>
+        <div class="txt"><span class="num" data-i18n="n5">Activiteit</span><h3 data-i18n="a5h">Cursus manden vlechten</h3><p data-i18n="a5p">Leer van een bewoner hoe een mand wordt gevlochten, van de eerste strook tot de afwerking. Je eigen werkstuk neem je mee naar huis.</p></div>
+      </article>
+      <article class="act">
+        <div class="ph"><img src="images/IMG_7849.jpg" alt="De overdekte buitenruimte waar samen gekookt en gegeten wordt" data-i18n-alt="alt6"></div>
+        <div class="txt"><span class="num" data-i18n="n6">Activiteit</span><h3 data-i18n="a6h">Samen koken en eten</h3><p data-i18n="a6p">Kook samen met je gastheren en gastvrouwen een maaltijd met producten uit het dorp, en schuif daarna aan om samen te eten.</p></div>
+      </article>
+    </div>
+
+    <div class="dayflow">
+      <h3 data-i18n="flowH">Voorbeeld van een dag</h3>
+      <ol>
+        <li><b data-i18n="d1h">Ochtend</b><span data-i18n="d1p">Ophalen in Paramaribo en rijden naar Wanhatti</span></li>
+        <li><b data-i18n="d2h">Aankomst</b><span data-i18n="d2p">Boottocht naar Lantiwee en welkom door de bewoners</span></li>
+        <li><b data-i18n="d3h">Voormiddag</b><span data-i18n="d3p">Tour door het dorp en de plantages</span></li>
+        <li><b data-i18n="d4h">Middag</b><span data-i18n="d4p">Samen eten, en bijvoorbeeld cassavebrood maken</span></li>
+        <li><b data-i18n="d5h">Namiddag</b><span data-i18n="d5p">Nog een activiteit, daarna terug naar Paramaribo</span></li>
+      </ol>
+      <p class="note" data-i18n="flowNote">Dit is een voorbeeld. Elke tour is anders: het programma wordt vooraf met de bewoners afgestemd en houdt rekening met het weer en de rivier. Bij je boeking hoor je wat er op jouw dag op het programma staat.</p>
+    </div>
+
+    <div class="ledby">
+      <div class="ph"><img src="images/IMG_7775.jpg" alt="Een bewoner met zijn gevlochten manden op de markt" data-i18n-alt="alt7"></div>
+      <div class="txt">
+        <span class="eyebrow" data-i18n="k2">Geleid door de bewoners</span>
+        <h2 data-i18n="ledH">Jouw dag, hun dorp</h2>
+        <p data-i18n="ledP">De dorpsleiding bepaalt samen wat er met bezoekers wordt gedeeld en hoeveel gasten er tegelijk komen. Je boekt rechtstreeks bij Lantiwee.</p>
+        <ul>
+          <li data-i18n="led1">Je gidsen zijn mensen die in het dorp wonen en het dorp kennen.</li>
+          <li data-i18n="led2">Het programma wordt vooraf met hen afgestemd, dus elke tour is net even anders.</li>
+          <li data-i18n="led3">Wat je betaalt komt ten goede aan de bewoners en het dorp.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL -->
+<section id="praktisch">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="k6">Praktisch</span>
+    <h2 data-i18n="pracH">Goed om te weten</h2>
+    <dl class="facts">
+      <div><dt data-i18n="f1k">Vertrek</dt><dd data-i18n="f1v">Paramaribo<small>Ophalen bij je hotel of adres</small></dd></div>
+      <div><dt data-i18n="f2k">Reis</dt><dd data-i18n="f2v">Over de weg naar Wanhatti, dan per boot<small>Geregeld door het dorp</small></dd></div>
+      <div><dt data-i18n="f3k">Duur</dt><dd data-i18n="f3v">Eén dag<small>Vertrek in de ochtend, terug aan het eind van de middag</small></dd></div>
+      <div><dt data-i18n="f4k">Gidsen</dt><dd data-i18n="f4v">Bewoners van Lantiwee<small>In het Nederlands en Sranantongo</small></dd></div>
+      <div><dt data-i18n="f5k">Groepsgrootte</dt><dd data-i18n="f5v">Kleine groepen<small>Het dorp bepaalt het maximum</small></dd></div>
+      <div><dt data-i18n="f6k">Prijs</dt><dd data-i18n="f6v">Op aanvraag<small>Inclusief vervoer en boottocht</small></dd></div>
+      <div><dt data-i18n="f7k">Beste periode</dt><dd data-i18n="f7v">Droge tijd<small>In de regentijd stemmen we de datum met je af</small></dd></div>
+      <div><dt data-i18n="f8k">Meenemen</dt><dd data-i18n="f8v">Stevige schoenen<small>Zonnebrand, muggenmiddel en water</small></dd></div>
+    </dl>
+    <div class="cta-row"><a class="btn dark" href="#boeken" data-i18n="m5">Boek de dagtour</a></div>
+  </div>
+</section>
+
+<!-- ABOUT LANTIWEE (background) -->
+<div class="about-head" id="over">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="k9">Over Lantiwee</span>
+    <h2 data-i18n="overH">Meer weten over het dorp?</h2>
+    <p data-i18n="overP">Achtergrond bij je bezoek: de geschiedenis van Lantiwee, wat er rond het dorp groeit en waar de bewoners naartoe willen.</p>
+    <nav aria-label="Over Lantiwee"><a href="#historie" data-i18n="m2">Historie</a><a href="#oogst" data-i18n="m3">Dorp &amp; oogst</a><a href="#toekomst" data-i18n="m6">Toekomst</a></nav>
+  </div>
+</div>
+
+<!-- HISTORY -->
+<section class="bgsec" id="historie">
+  <div class="wrap split">
+    <div class="txt">
+      <span class="kicker" data-i18n="k3">Historie</span>
+      <h2 data-i18n="histH">Een dorp met een gelaagd verleden</h2>
+      <p data-i18n="hist1">Lang voordat Lantiwee een Okanisi Fiimandorp werd, lag hier een post van het koloniale leger. Daarna bouwden Fiiman-families er hun leven op, aan de oever van de Cottica, met het bos als voorraadkast en de rivier als weg.</p>
+      <ol class="timeline">
+        <li><b data-i18n="t1h">Koloniale tijd</b><span data-i18n="t1p">Post van het koloniale leger aan de Cottica</span></li>
+        <li><b data-i18n="t2h">Okanisi Fiimandorp</b><span data-i18n="t2p">Families vestigen zich en bouwen het dorp op</span></li>
+        <li><b data-i18n="t3h">1986–1992</b><span data-i18n="t3p">Binnenlandse Oorlog: de bewoners moeten vertrekken</span></li>
+        <li><b data-i18n="t4h">Na de oorlog</b><span data-i18n="t4p">Bewoners keren terug en bouwen het dorp weer op</span></li>
+        <li><b data-i18n="t5h">Nu</b><span data-i18n="t5p">Lantiwee opent zijn deuren voor bezoekers</span></li>
+      </ol>
+      <p class="note" data-i18n="histNote">Meer verhalen en historische foto's uit het dorp volgen binnenkort.</p>
+    </div>
+    <div class="gallery">
+      <figure class="ph wide" style="margin:0"><div class="soon"><span data-i18n="soonHist1">Ruimte voor een historische foto</span></div></figure>
+      <figure class="ph" style="margin:0"><img src="images/IMG_8012.jpg" alt="Een oud houten gebouw in Lantiwee" data-i18n-alt="alt8"><figcaption data-i18n="cap8">Oude gebouwen vertellen hun eigen verhaal</figcaption></figure>
+      <figure class="ph" style="margin:0"><img src="images/IMG_7883.jpg" alt="De oever van de Cottica met korjalen" data-i18n-alt="alt9"><figcaption data-i18n="cap9">De Cottica: al eeuwen de weg naar het dorp</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="band bgimg" style="background-image:url('images/IMG_7878.jpg')" role="img" aria-label="Palmen en bomen langs de waterkant bij Lantiwee" data-i18n-aria="band2Alt"><span class="bandcap" data-i18n="band2">Langs de waterkant van Lantiwee</span></div>
+
+<!-- VILLAGE & HARVEST -->
+<section class="harvest bgsec" id="oogst">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="k4">Het dorp en de oogst</span>
+    <h2 data-i18n="harvH">Een dorp vol vruchten</h2>
+    <p class="intro" data-i18n="harvP">Rond Lantiwee groeit van alles. Bewoners oogsten uit de kostgronden, uit de palmen langs de rivier en uit het bos. Op de zaterdagmarkt verkopen zo'n 25 mensen wat ze zelf telen, en wie weet proef je tijdens je bezoek iets van de oogst.</p>
+
+    <div class="produce">
+      <div><b data-i18n="pr1">Mango</b><span data-i18n="pr1s">zoet en sappig, recht van de boom</span></div>
+      <div><b data-i18n="pr2">Podosiri</b><span data-i18n="pr2s">açai, geoogst uit hoge palmen</span></div>
+      <div><b data-i18n="pr3">Cassave</b><span data-i18n="pr3s">basis voor brood en vele gerechten</span></div>
+      <div><b data-i18n="pr4">Ananas</b><span data-i18n="pr4s">uit de kostgronden</span></div>
+      <div><b data-i18n="pr5">Kokosnoot</b><span data-i18n="pr5s">water, vlees en olie</span></div>
+      <div><b data-i18n="pr6">Watermeloen</b><span data-i18n="pr6s">verkocht op de zaterdagmarkt</span></div>
+      <div><b data-i18n="pr7">Pomtayer</b><span data-i18n="pr7s">de knol voor de Surinaamse pom</span></div>
+      <div><b data-i18n="pr9">Kersen</b><span data-i18n="pr9s">Surinaamse kersen, zuur en zoet</span></div>
+      <div><b data-i18n="pr10">Cashew</b><span data-i18n="pr10s">de sappige vrucht én de noot</span></div>
+      <div><b data-i18n="pr11">Pomerague</b><span data-i18n="pr11s">frisse, rode vrucht van de boom</span></div>
+      <div><b data-i18n="pr12">Chinese pomtayer</b><span data-i18n="pr12s">een andere soort pomtayer</span></div>
+      <div><b data-i18n="pr8">Bananen</b><span data-i18n="pr8s">en nog veel meer</span></div>
+    </div>
+
+    <div class="crops">
+      <div class="crop">
+        <div class="cimg"><img src="images/IMG_7899.jpg" alt="Een bewoner klimt in een podosiripalm" data-i18n-alt="alt11"></div>
+        <div class="ctxt">
+          <span class="kicker" data-i18n="c1k">Podosiri · açai</span>
+          <h3 data-i18n="c1h">Geoogst uit de top van de palm</h3>
+          <p data-i18n="c1p">De podosiripalm wordt hoog en slank. Om bij de trossen met donkerpaarse besjes te komen, klimt een bewoner de stam in en snijdt de tros los. Het is werk dat kracht en ervaring vraagt.</p>
+        </div>
+      </div>
+      <div class="crop rev">
+        <div class="cimg"><img src="images/IMG_7873.jpg" alt="Een korjaal vol trossen podosiri bij de oever" data-i18n-alt="alt10"></div>
+        <div class="ctxt">
+          <span class="kicker" data-i18n="c2k">Van palm naar boot</span>
+          <h3 data-i18n="c2h">Per korjaal over de rivier</h3>
+          <p data-i18n="c2p">De geoogste trossen gaan in de korjaal. De besjes worden later in water geweekt en uitgeperst tot een dik, paars sap: podosiri, in Suriname geliefd als drank en bij de maaltijd.</p>
+        </div>
+      </div>
+      <div class="crop">
+        <div class="cimg"><img src="images/IMG_7949.jpg" alt="Trossen bananen op de steiger aan de rivier" data-i18n-alt="alt12"></div>
+        <div class="ctxt">
+          <span class="kicker" data-i18n="c3k">Bananen</span>
+          <h3 data-i18n="c3h">Groen geoogst, klaar voor vervoer</h3>
+          <p data-i18n="c3p">Bananen worden als hele tros van de plant gekapt terwijl ze nog groen zijn. Zo overleven ze de reis per boot en rijpen ze daarna verder. Op de steiger wachten ze op vervoer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="honest">
+      <div class="ph"><img src="images/IMG_7932_2.jpg" alt="De onverharde zandweg naar Lantiwee" data-i18n-alt="alt13"></div>
+      <div class="txt">
+        <span class="kicker" data-i18n="k5">Een eerlijk verhaal</span>
+        <h2 data-i18n="roadH">Rijk aan oogst, lastig te bereiken</h2>
+        <p data-i18n="road1">Het laatste stuk naar Lantiwee is een onverharde zandweg. In de droge tijd is die goed te doen, maar in de regentijd is het dorp over land nauwelijks bereikbaar. Voor de bewoners betekent dat: fruit en groente genoeg, maar het is moeilijk om de oogst op tijd in de stad te verkopen.</p>
+        <p data-i18n="road3">Een dagtour helpt een beetje mee: bezoekers zorgen voor inkomen in het dorp en laten zien dat Lantiwee de moeite waard is om te bereiken.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section class="future bgsec" id="toekomst">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker" data-i18n="k8">De toekomst van Lantiwee</span>
+      <h2 data-i18n="futH">Een dorp vol plannen</h2>
+    </div>
+    <div class="fut-grid one">
+      <div class="plans">
+        <h3 data-i18n="plansH">Waar het dorp van droomt</h3>
+        <ul>
+          <li data-i18n="pl1">Meer en grotere oogsten, met machines voor de landbouw</li>
+          <li data-i18n="pl2">Een betere weg naar het dorp</li>
+          <li data-i18n="pl3">Betere telefoonmasten, zodat het dorp goed bereikbaar is</li>
+          <li data-i18n="pl4">Schoon drinkwater en douchewater</li>
+          <li data-i18n="pl5">De terugkeer van mensen die na de Binnenlandse Oorlog zijn gevlucht en nooit meer terugkwamen</li>
+          <li data-i18n="pl6">Een middelbare school in de buurt, zodat kinderen in de dorpen kunnen blijven wonen</li>
+        </ul>
+        <p data-i18n="futHard">Het dorp wil graag onafhankelijker worden en belangrijke voorzieningen, zoals onderwijs, schoon water en een goede verbinding, weer in de eigen regio hebben. Dat gaat stap voor stap, en de onverharde weg maakt het in de regentijd soms lastig. Elke bijdrage helpt de bewoners verder op weg.</p>
+      </div>
+    </div>
+    <div class="fund">
+      <div>
+        <h3 data-i18n="fundH">Help Lantiwee vooruit</h3>
+        <p data-i18n="fundP">Via onze GoFundMe kun je de eerste stappen van het dorp steunen. Elke bijdrage, groot of klein, helpt de bewoners om hun plannen waar te maken.</p>
+      </div>
+      <a class="btn" href="https://gofund.me/584082cd7" target="_blank" rel="noopener" data-i18n="fundBtn">Steun ons via GoFundMe</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="book bgimg" id="boeken" style="background-image:url('images/IMG_7970.jpg')">
+  <div class="wrap">
+    <div class="side">
+      <span class="eyebrow" data-i18n="k7">Boek de dagtour</span>
+      <h2 data-i18n="bookH">Kom een dag naar Lantiwee</h2>
+      <p data-i18n="book1">Laat weten wanneer je wilt komen en met hoeveel personen. We nemen contact met je op om de datum, de prijs, je ophaalpunt en het programma van die dag te bevestigen.</p>
+      <ul>
+        <li data-i18n="bk1">Boottocht en dorpstour met bewoners</li>
+        <li data-i18n="bk2">Vervoer vanuit Paramaribo geregeld</li>
+        <li data-i18n="bk3">Elke tour is net even anders</li>
+      </ul>
+      <p data-i18n="book2">Dit is een aanvraag, geen betaling. Via dit formulier wordt niets afgeschreven.</p>
+    </div>
+    <div class="formcard">
+    <form id="bookingForm" novalidate>
+      <div class="f"><label for="name" data-i18n="lName">Volledige naam</label><input id="name" name="name" required autocomplete="name"></div>
+      <div class="f"><label for="email" data-i18n="lEmail">E-mail</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      <div class="f"><label for="phone" data-i18n="lPhone">Telefoon / WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="f"><label for="date" data-i18n="lDate">Voorkeursdatum</label><input id="date" name="preferred_date" type="date" required></div>
+      <div class="f"><label for="people" data-i18n="lPeople">Aantal personen</label><input id="people" name="people" type="number" min="1" max="30" value="2" required></div>
+      <div class="f"><label for="pickup" data-i18n="lPickup">Ophalen in Paramaribo</label><input id="pickup" name="pickup" data-i18n-ph="phPickup" placeholder="Hotel of adres"></div>
+      <div class="f full"><label for="msg" data-i18n="lMsg">Is er iets wat we moeten weten?</label><textarea id="msg" name="message" data-i18n-ph="phMsg" placeholder="Dieet, kinderen, mobiliteit, vragen"></textarea></div>
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="status" id="status" role="status" hidden></div>
+      <button class="btn dark" type="submit" id="send" data-i18n="send">Verstuur boekingsaanvraag</button>
+    </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="stripe" aria-hidden="true"></div>
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top" style="margin-bottom:14px"><span class="mark">L</span><span class="name"><b>Lantiwee</b><span>Suriname</span></span></a>
+      <p data-i18n="foot">Een dagtour georganiseerd en geleid door de gemeenschap van Lantiwee, aan de Cottica-rivier.</p>
+    </div>
+    <div><h4 data-i18n="fNav">Ontdek</h4>
+      <p><a href="#dagtour" data-i18n="m1">De dagtour</a><br><a href="#praktisch" data-i18n="m4">Praktisch</a><br><a href="#over" data-i18n="m7">Over Lantiwee</a><br><a href="#boeken" data-i18n="m5">Boek de dagtour</a></p></div>
+    <div><h4 data-i18n="fTouch">Contact</h4>
+      <p data-i18n="fTouchP">Vragen voordat je boekt? Stuur een aanvraag en zet je vraag in het berichtveld.</p>
+      <p style="margin-top:14px"><a class="btn" href="#boeken" data-i18n="m5">Boek de dagtour</a></p></div>
+  </div>
+  <div class="credits"><div class="wrap">
+    <h4 data-i18n="crH">In samenwerking met</h4>
+    <p data-i18n="crP">De dagtour is opgezet door de bewoners van Lantiwee, samen met:</p>
+    <ul>
+      <li><b>Stichting STEORR</b><span data-i18n="cr1">Stichting Economische Ontwikkeling Ricanau Ricanau Mofo</span></li>
+      <li><b>AMTO</b><span data-i18n="cr2">Hendrik Pinas</span></li>
+      <li><b>TU Delft</b><span data-i18n="cr3">Studententeam</span></li>
+    </ul>
+  </div></div>
+  <div class="legal">© 2026 Lantiwee, Suriname</div>
+</footer>
+
+<script>
+/* Address that receives booking requests (via FormSubmit). Leave empty until it's set up. */
+const BOOKING_EMAIL = "lantiwee.cottica@gmail.com";
+
+const T = { nl:{}, en:{
+  top1:"Day tour from Paramaribo · led by the residents of Lantiwee",
+  m1:"The day tour", m2:"History", m3:"Village & harvest", m4:"Practical", m5:"Book the day tour",
+  heroAlt:"The Cottica river at Lantiwee with canoes on the bank",
+  eyebrow:"The only day tour on the Cottica",
+  h1:"One day in Lantiwee, with the people who live there",
+  lead:"Travel by boat from Wanhatti along the Cottica and experience the village with the people who live there. Your whole day is guided by residents.",
+  cta1:"Book the day tour", cta2:"See the programme",
+  b1:"1 day · return trip", b2:"Led by residents", b3:"Boat trip on the Cottica",
+  k0:"Welcome to Lantiwee", introH:"A village on the Cottica",
+  ab1:"Lantiwee is a small Okanisi Fiiman village on the bank of the Cottica river, in the Marowijne district. It lies in the middle of tropical rainforest, about two hours from Paramaribo: along the paved road to Tamarin and then a sand road, or by boat from Wanhatti.",
+  ab1b:"The Cottica is known as the deepest river in Suriname and links the Fiiman villages of the Bilowataa region. After the Interior War residents returned and rebuilt the village. Today about 25 people live here, and for the first time they are welcoming visitors.",
+  af1k:"River", af1v:"Cottica", af2k:"District", af2v:"Marowijne", af3k:"Region", af3v:"Bilowataa", af4k:"From Paramaribo", af4v:"About 2 hours", af5k:"Residents", af5v:"About 25, and growing",
+  p1h:"One full day", p1p:"You leave Paramaribo in the morning and are back by late afternoon. No overnight stay needed.",
+  p2h:"Led by residents", p2p:"Your guides, cooks and fishermen live in Lantiwee. They tell their own story.",
+  p3h:"At the pace of the village", p3p:"No standard show: every tour is different and shows how the village really lives.",
+  k1:"The day tour", tourH:"What you can do", tourUnique:"This is the only day tour on the Cottica.", tourP:"These are the activities residents offer. Every tour is a little different: the programme is planned in advance with residents, so your day is truly carried by the village.",
+  n1:"Activity", a1h:"Boat trip from Wanhatti", a1p:"From Wanhatti you travel by dugout canoe along the Cottica to Lantiwee, on the deepest river in Suriname, past rainforest-lined banks and, with some luck, birds over the water.", alt1:"Visitors in a dugout canoe on the river",
+  n2:"Activity", a2h:"Village and plantation tour", a2p:"A resident walks you past the houses, the old places and the farm plots. Hear what grows here and how the village lives.", alt2:"Houses and a shelter in the village",
+  n3:"Activity", a3h:"Fishing", a3p:"Fish the way residents have for generations, from the bank or the boat, with people who know this river inside out.", alt3:"A dugout canoe on the river near the village",
+  n4:"Activity", a4h:"Making cassava bread", a4p:"From root to bread: grate, press and bake cassava the traditional way, a skill passed on from parent to child in the village.", soonCas:"Photo coming: baking cassava bread",
+  n5:"Activity", a5h:"Basket weaving class", a5p:"Learn from a resident how a basket is woven, from the first strip to the finish. You take your own piece home.", alt5:"Woven baskets from the village",
+  n6:"Activity", a6h:"Cooking and eating together", a6p:"Cook a meal with your hosts using produce from the village, then sit down and eat together.", alt6:"The covered outdoor space where people cook and eat together",
+  flowH:"An example day",
+  d1h:"Morning", d1p:"Pick-up in Paramaribo and drive to Wanhatti",
+  d2h:"Arrival", d2p:"Boat trip to Lantiwee and welcome by residents",
+  d3h:"Late morning", d3p:"Village and plantation tour",
+  d4h:"Midday", d4p:"Eating together, and for example making cassava bread",
+  d5h:"Afternoon", d5p:"One more activity, then back to Paramaribo",
+  flowNote:"This is an example. Every tour is different: the programme is planned in advance with residents and takes the weather and the river into account. When you book, we let you know what is on the programme for your day.",
+  k2:"Led by residents", ledH:"Your day, their village", alt7:"A resident with his woven baskets at the market",
+  ledP:"Village leaders decide together what is shared with visitors and how many guests come at a time. You book directly with Lantiwee.",
+  led1:"Your guides are people who live in and know the village.", led2:"The programme is planned with them in advance, so every tour is a little different.", led3:"What you pay benefits the residents and the village.",
+  k3:"History", histH:"A village with a layered past",
+  hist1:"Long before Lantiwee became a Okanisi Fiiman village, the colonial army had a post here. Fiiman families later built their lives on the bank of the Cottica, with the forest as their pantry and the river as their road.",
+  t1h:"Colonial era", t1p:"Colonial army post on the Cottica", t2h:"Okanisi Fiiman village", t2p:"Families settle and build up the village",
+  t3h:"1986–1992", t3p:"Interior War: residents are forced to leave", t4h:"After the war", t4p:"Residents return and rebuild the village", t5h:"Today", t5p:"Lantiwee opens its doors to visitors",
+  histNote:"More stories and historical photos from the village are coming soon.",
+  soonHist1:"Space for a historical photo", soonHist2:"Space for a historical photo", soonHist3:"Space for a historical photo",
+  alt8:"An old wooden building in Lantiwee", cap8:"Old buildings tell their own story", alt9:"The bank of the Cottica with dugout canoes", cap9:"The Cottica: the road to the village for centuries",
+  k4:"The village and the harvest", harvH:"A village full of fruit",
+  harvP:"All kinds of things grow around Lantiwee. Residents harvest from their farm plots, the palms along the river and the forest. At the Saturday market about 25 people sell what they grow, and with a bit of luck you taste some of the harvest during your visit.",
+  pr1:"Mango", pr1s:"sweet and juicy, straight from the tree", pr2:"Podosiri", pr2s:"açai, harvested from tall palms", pr3:"Cassava", pr3s:"the base of bread and many dishes",
+  pr4:"Pineapple", pr4s:"from the farm plots", pr5:"Coconut", pr5s:"water, flesh and oil", pr6:"Watermelon", pr6s:"sold at the Saturday market",
+  pr7:"Pomtayer", pr7s:"the root behind Surinamese pom", pr9:"Cherries", pr9s:"Surinamese cherries, sweet and sour", pr10:"Cashew", pr10s:"the juicy fruit and the nut", pr11:"Pomerague", pr11s:"fresh red fruit from the tree", pr12:"Chinese pomtayer", pr12s:"another kind of pomtayer", pr8:"Bananas", pr8s:"and much more",
+  alt10:"A dugout canoe full of podosiri bunches at the bank", alt11:"A resident climbing a podosiri palm", alt12:"Bunches of bananas on the jetty by the river",
+  c1k:"Podosiri · açai", c1h:"Harvested from the top of the palm", c1p:"The podosiri palm grows tall and slender. To reach the bunches of dark purple berries, a resident climbs the trunk and cuts the bunch loose. It takes strength and experience.",
+  c2k:"From palm to boat", c2h:"Across the river by dugout canoe", c2p:"The harvested bunches go into the canoe. The berries are later soaked in water and pressed into a thick purple juice: podosiri, loved in Suriname as a drink and with meals.",
+  c3k:"Bananas", c3h:"Harvested green, ready to travel", c3p:"Bananas are cut from the plant as a whole bunch while still green. That way they survive the boat trip and ripen afterwards. On the jetty they wait for transport.",
+  band1:"The jetty on the Cottica", band1Alt:"The jetty on the Cottica at Lantiwee", band2:"Along the waterfront of Lantiwee", band2Alt:"Palms and trees along the waterfront at Lantiwee",
+  k5:"An honest story", roadH:"Rich in harvest, hard to reach", alt13:"The unpaved sand road to Lantiwee",
+  road1:"The last stretch to Lantiwee is an unpaved sand road. In the dry season it is fine, but in the rainy season the village is hardly reachable by land. For residents that means plenty of fruit and vegetables, but it is hard to get the harvest to the city in time to sell it.",
+  road3:"A day tour helps a little: visitors bring income to the village and show that Lantiwee is worth reaching.",
+  m6:"Future", m7:"About Lantiwee", k8:"The future of Lantiwee", futH:"A village full of plans",
+  alt14:"Houses in Lantiwee with a green building", plansH:"What the village dreams of",
+  pl1:"Bigger harvests, with machines for farming", pl2:"A better road to the village", pl3:"Better phone masts, so the village is well connected", pl4:"Clean drinking and shower water", pl5:"The return of people who fled after the Interior War and never came back", pl6:"A secondary school nearby, so children can keep living in the villages",
+  futHard:"The village would like to become more independent and to have important facilities, such as education, clean water and good connections, back in its own region. That happens step by step, and the unpaved road can make it difficult in the rainy season. Every contribution helps residents move forward.",
+  fundH:"Help Lantiwee move forward", fundP:"Through our GoFundMe you can support the village's first steps. Every contribution, big or small, helps residents make their plans happen.", fundBtn:"Support us on GoFundMe",
+  k9:"About Lantiwee", overH:"Want to know more about the village?", overP:"Background for your visit: the history of Lantiwee, what grows around the village and where residents want to go.",
+  k6:"Practical", pracH:"Good to know",
+  f1k:"Departure", f1v:"Paramaribo<small>Pick-up at your hotel or address</small>",
+  f2k:"Travel", f2v:"By road to Wanhatti, then by boat<small>Arranged by the village</small>",
+  f3k:"Duration", f3v:"One day<small>Leave in the morning, back by late afternoon</small>",
+  f4k:"Guides", f4v:"Residents of Lantiwee<small>In Dutch and Sranan Tongo</small>",
+  f5k:"Group size", f5v:"Small groups<small>The village sets the maximum</small>",
+  f6k:"Price", f6v:"On request<small>Including transport and boat trip</small>",
+  f7k:"Best time", f7v:"Dry season<small>In the rainy season we agree the date with you</small>",
+  f8k:"Bring", f8v:"Sturdy shoes<small>Sunscreen, mosquito repellent and water</small>",
+  k7:"Book the day tour", bookH:"Spend a day in Lantiwee",
+  book1:"Tell us when you would like to come and with how many people. We will get in touch to confirm the date, the price, your pick-up point and the programme for that day.",
+  bk1:"Boat trip and village tour with residents", bk2:"Transport from Paramaribo arranged", bk3:"Every tour is a little different",
+  book2:"This is a request, not a payment. Nothing is charged through this form.",
+  lName:"Full name", lEmail:"Email", lPhone:"Phone / WhatsApp", lDate:"Preferred date", lPeople:"Number of people", lPickup:"Pick-up in Paramaribo", lMsg:"Anything we should know?",
+  phPickup:"Hotel or address", phMsg:"Diet, children, mobility, questions", send:"Send booking request",
+  foot:"A day tour organised and led by the community of Lantiwee, on the Cottica river.",
+  crH:"In collaboration with", crP:"The day tour was set up by the residents of Lantiwee, together with:", cr1:"Stichting Economische Ontwikkeling Ricanau Ricanau Mofo", cr2:"Hendrik Pinas", cr3:"Student team",
+  fNav:"Explore", fTouch:"Contact", fTouchP:"Questions before you book? Send a request and put your question in the message field."
+}};
+const MSG = {
+ nl:{missing:"Vul je naam, een geldig e-mailadres, een datum en het aantal personen in.", noEmail:"Online boeken staat nog niet aan. Je aanvraag is niet verstuurd.",
+     sending:"Versturen…", ok:"Aanvraag verstuurd. We nemen contact met je op.", fail:"Je aanvraag kon niet worden verstuurd. Controleer je verbinding en probeer het opnieuw."},
+ en:{missing:"Please fill in your name, a valid email, a date and the number of people.", noEmail:"Online booking is not switched on yet. Your request was not sent.",
+     sending:"Sending…", ok:"Request sent. We will get in touch with you.", fail:"Your request could not be sent. Check your connection and try again."}
+};
+const HTML_KEYS = new Set(["f1v","f2v","f3v","f4v","f5v","f6v","f7v","f8v"]);
+let lang = "nl";
+document.querySelectorAll("[data-i18n]").forEach(el => { const k=el.dataset.i18n; if(!(k in T.nl)) T.nl[k] = HTML_KEYS.has(k) ? el.innerHTML : el.textContent; });
+document.querySelectorAll("[data-i18n-ph]").forEach(el => T.nl[el.dataset.i18nPh] = el.placeholder);
+document.querySelectorAll("[data-i18n-alt]").forEach(el => T.nl[el.dataset.i18nAlt] = el.alt);
+document.querySelectorAll("[data-i18n-aria]").forEach(el => T.nl[el.dataset.i18nAria] = el.getAttribute("aria-label"));
+const status = document.getElementById("status");
+function setLang(l){
+  lang = l; document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el => { const k=el.dataset.i18n, v=T[l][k] ?? T.nl[k]; if(HTML_KEYS.has(k)) el.innerHTML=v; else el.textContent=v; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => el.placeholder = T[l][el.dataset.i18nPh] ?? T.nl[el.dataset.i18nPh]);
+  document.querySelectorAll("[data-i18n-alt]").forEach(el => el.alt = T[l][el.dataset.i18nAlt] ?? T.nl[el.dataset.i18nAlt]);
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", T[l][el.dataset.i18nAria] ?? T.nl[el.dataset.i18nAria]));
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  status.hidden = true;
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+const nav = (navigator.language || "").toLowerCase();
+if (nav && !nav.startsWith("nl")) setLang("en");
+
+const form = document.getElementById("bookingForm"), send = document.getElementById("send");
+const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+document.getElementById("date").min = d.toISOString().slice(0,10);
+function show(kind, key){ status.className = "status " + kind; status.textContent = MSG[lang][key]; status.hidden = false; }
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  if (!form.checkValidity()) { show("err","missing"); return; }
+  if (!BOOKING_EMAIL) { show("err","noEmail"); return; }
+  const data = Object.fromEntries(new FormData(form));
+  if (data._honey) return; delete data._honey;
+  data._subject = "Lantiwee dagtour aanvraag: " + data.name + ", " + data.preferred_date + ", " + data.people + " pers.";
+  data._replyto = data.email; data._template = "table"; data.language = lang;
+  send.disabled = true; show("", "sending");
+  try {
+    const r = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(BOOKING_EMAIL), {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(data)});
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || String(j.success) === "false") throw new Error();
+    form.reset(); show("ok","ok");
+  } catch { show("err","fail"); }
+  send.disabled = false;
+});
+</script>
+</body>
+</html>
