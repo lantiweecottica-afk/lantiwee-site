@@ -569,8 +569,8 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
 </footer>
 
 <script>
-/* Address that receives booking requests (via FormSubmit). Leave empty until it's set up. */
-const BOOKING_EMAIL = "lantiwee.cottica@gmail.com";
+/* Booking requests are sent via Web3Forms to lantiwee.cottica@gmail.com. This is a public key, safe to keep in the page. */
+const WEB3FORMS_KEY = "59a8aee9-3e1b-49b1-b93b-ec6519484443";
 
 const T = { nl:{}, en:{
   top1:"Day tour from Paramaribo · led by the residents of Lantiwee",
@@ -683,18 +683,19 @@ function show(kind, key){ status.className = "status " + kind; status.textConten
 form.addEventListener("submit", async e => {
   e.preventDefault();
   if (!form.checkValidity()) { show("err","missing"); return; }
-  if (!BOOKING_EMAIL) { show("err","noEmail"); return; }
+  if (!WEB3FORMS_KEY) { show("err","noEmail"); return; }
   const data = Object.fromEntries(new FormData(form));
   if (data._honey) return; delete data._honey;
-  data._subject = "Lantiwee dagtour aanvraag: " + data.name + ", " + data.preferred_date + ", " + data.people + " pers.";
-  data._replyto = data.email; data._template = "table"; data.language = lang;
+  data.subject = "Lantiwee dagtour aanvraag: " + data.name + ", " + data.preferred_date + ", " + data.people + " pers.";
+  data.from_name = "Lantiwee website"; data.replyto = data.email; data.language = lang;
+  data.access_key = WEB3FORMS_KEY;
   send.disabled = true; show("", "sending");
   try {
     const ctl = new AbortController(); const to = setTimeout(() => ctl.abort(), 20000);
-    const r = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(BOOKING_EMAIL), {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(data), signal:ctl.signal});
+    const r = await fetch("https://api.web3forms.com/submit", {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(data), signal:ctl.signal});
     clearTimeout(to);
     const j = await r.json().catch(() => ({}));
-    if (!r.ok || String(j.success) === "false") throw new Error();
+    if (!r.ok || j.success !== true) throw new Error();
     form.reset(); show("ok","ok");
   } catch { show("err","fail"); }
   send.disabled = false;
