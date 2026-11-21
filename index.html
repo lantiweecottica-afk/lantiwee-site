@@ -389,7 +389,7 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
 </section>
 
 <div class="band band-wide band-video">
-  <video class="bandvid" src="video/cottica-korjaal.mp4" poster="images/cottica-korjaal-poster.jpg" muted loop playsinline preload="metadata" aria-label="Met de korjaal over de Cottica bij zonsondergang" data-i18n-aria="band1Alt"></video>
+  <video class="bandvid" src="video/cottica-korjaal.mp4" data-hd="video/cottica-korjaal-hd.mp4" poster="images/cottica-korjaal-poster.jpg" muted loop playsinline preload="metadata" aria-label="Met de korjaal over de Cottica bij zonsondergang" data-i18n-aria="band1Alt"></video>
   <span class="bandcap" data-i18n="band1">Met de korjaal over de Cottica</span>
 </div>
 
@@ -794,6 +794,7 @@ form.addEventListener("submit", async e => {
 (function(){
   const vids=document.querySelectorAll('.bandvid');
   const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(window.innerWidth>700) vids.forEach(v=>{if(v.dataset.hd){v.src=v.dataset.hd;}});
   if(!vids.length||reduce) return;
   if(!('IntersectionObserver' in window)){vids.forEach(v=>{v.play().catch(()=>{})});return;}
   const io=new IntersectionObserver(es=>es.forEach(e=>{
