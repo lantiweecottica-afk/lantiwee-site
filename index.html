@@ -239,6 +239,20 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
 .credits li span{font-size:.78rem;color:#9db3a6}
 .legal{border-top:1px solid rgba(255,255,255,.12);text-align:center;font:600 .66rem var(--label);letter-spacing:.12em;text-transform:uppercase;padding:18px 24px;color:#9db3a6}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* mobiel: praktisch en vruchten (na de basisregels, zodat ze winnen) */
+@media (max-width:900px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.produce{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){
+ .facts{grid-template-columns:1fr;margin-top:28px}
+ .facts div{display:grid;grid-template-columns:7.2em 1fr;column-gap:14px;align-items:baseline;padding:14px 4px}
+ .facts dt{margin:0;line-height:1.35}
+ .facts dd{line-height:1.4}
+ .facts dd small{margin-top:2px}
+ .produce{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:28px}
+ .produce div{padding:12px 12px 11px;border-left-width:3px}
+ .produce b{font-size:.92rem;letter-spacing:.02em;hyphens:auto;overflow-wrap:anywhere}
+ .produce span{font-size:.8rem;line-height:1.4;display:block;margin-top:2px}
+}
 </style>
 </head>
 <body>
