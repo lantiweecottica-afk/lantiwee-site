@@ -262,6 +262,9 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
 .social svg{width:24px;height:24px}
 .s-ig{background:#d8317a}.s-fb{background:#2f66f0}.s-tt{background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
 .bandcap{text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.band-video{overflow:hidden;background:#0a3324}
+.bandvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:700px){.band.band-video{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
@@ -385,7 +388,10 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
   </div>
 </section>
 
-<div class="band band-wide bgimg" style="background-image:url('images/IMG_1885hq.jpg');background-position:center 60%" role="img" aria-label="De steiger aan de Cottica bij Lantiwee" data-i18n-aria="band1Alt"><span class="bandcap" data-i18n="band1">De steiger aan de Cottica</span></div>
+<div class="band band-wide band-video">
+  <video class="bandvid" src="video/cottica-korjaal.mp4" poster="images/cottica-korjaal-poster.jpg" muted loop playsinline preload="metadata" aria-label="Met de korjaal over de Cottica bij zonsondergang" data-i18n-aria="band1Alt"></video>
+  <span class="bandcap" data-i18n="band1">Met de korjaal over de Cottica</span>
+</div>
 
 <!-- TOUR -->
 <section class="tour" id="dagtour">
@@ -703,7 +709,7 @@ const T = { nl:{}, en:{
   c1k:"Podosiri · açai", c1h:"Harvested from the top of the palm", c1p:"The podosiri palm grows tall and slender. To reach the bunches of dark purple berries, a resident climbs the trunk and cuts the bunch loose. It takes strength and experience.",
   c2k:"From palm to boat", c2h:"Across the river by dugout canoe", c2p:"The harvested bunches go into the canoe. The berries are later soaked in water and pressed into a thick purple juice: podosiri, loved in Suriname as a drink and with meals.",
   c3k:"Bananas", c3h:"Harvested green, ready to travel", c3p:"Bananas are cut from the plant as a whole bunch while still green. That way they survive the boat trip and ripen afterwards. On the jetty they wait for transport.",
-  band1:"The jetty on the Cottica", band1Alt:"The jetty on the Cottica at Lantiwee", band2:"Along the waterfront of Lantiwee", band2Alt:"The Cottica river at Lantiwee with a dugout canoe and rainforest along the bank",
+  band1:"By dugout canoe on the Cottica", band1Alt:"By dugout canoe on the Cottica at sunset", band2:"Along the waterfront of Lantiwee", band2Alt:"The Cottica river at Lantiwee with a dugout canoe and rainforest along the bank",
   k5:"An honest story", roadH:"Rich in harvest, hard to reach", alt13:"The unpaved sand road to Lantiwee",
   road1:"The last stretch to Lantiwee is an unpaved sand road. In the dry season it is fine, but in the rainy season the village is hardly reachable by land. For residents that means plenty of fruit and vegetables, but it is hard to get the harvest to the city in time to sell it.",
   road3:"A day tour helps a little: visitors bring income to the village and show that Lantiwee is worth reaching.",
@@ -783,6 +789,19 @@ form.addEventListener("submit", async e => {
   } catch { show("err","fail"); }
   send.disabled = false;
 });
+
+/* Video in de band: speelt automatisch zodra hij in beeld komt */
+(function(){
+  const vids=document.querySelectorAll('.bandvid');
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!vids.length||reduce) return;
+  if(!('IntersectionObserver' in window)){vids.forEach(v=>{v.play().catch(()=>{})});return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    const v=e.target;
+    if(e.isIntersecting){v.play().catch(()=>{});} else {v.pause();}
+  }),{threshold:0.25});
+  vids.forEach(v=>io.observe(v));
+})();
 </script>
 </body>
 </html>
