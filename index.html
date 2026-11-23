@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lantiwee.com/">
 <meta property="og:title" content="Lantiwee – Dagtour vanuit Paramaribo, geleid door bewoners">
-<meta property="og:description" content="De enige dagtour aan de Cottica: bezoek Lantiwee, een Okanisi Fiimandorp (Marron), met de mensen die er wonen. Ophalen in Paramaribo.">
+<meta property="og:description" content="Dagtour naar Lantiwee aan de Cottica: bezoek Lantiwee, een Okanisi Fiimandorp (Marron), met de mensen die er wonen. Ophalen in Paramaribo.">
 <meta property="og:image" content="https://lantiwee.com/images/IMG_7941c.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -265,6 +265,14 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
 .band-video{overflow:hidden;background:#0a3324}
 .bandvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 @media (max-width:700px){.band.band-video{aspect-ratio:16/9}}
+.incl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
+.inclcard{background:#fff;border-top:4px solid var(--forest);padding:20px 22px;text-align:left}
+.inclcard h3{font:500 1.05rem var(--head);text-transform:uppercase;letter-spacing:.04em;margin:0 0 10px;color:var(--forest)}
+.inclcard ul{margin:0;padding:0;list-style:none}
+.inclcard li{position:relative;padding:5px 0 5px 22px;color:var(--muted);line-height:1.45}
+.inclcard li::before{content:"";position:absolute;left:2px;top:12px;width:8px;height:8px;border-radius:50%;background:var(--sun)}
+.inclcard p{margin:0;color:var(--muted);line-height:1.55}
+@media (max-width:860px){.incl{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -292,7 +300,7 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
 <!-- HERO -->
 <div class="hero bgimg" style="background-image:url('images/IMG_7941c.jpg')" role="img" aria-label="De Cottica-rivier bij Lantiwee met kano's aan de oever" data-i18n-aria="heroAlt">
   <div class="in">
-    <span class="eyebrow" data-i18n="eyebrow">De enige dagtour aan de Cottica</span>
+    <span class="eyebrow" data-i18n="eyebrow">Dagtour vanuit Paramaribo, geleid door bewoners</span>
     <h1 data-i18n="h1">Eén dag in Lantiwee, met de mensen die er wonen</h1>
     <p class="sub" data-i18n="lead">Word in Paramaribo opgehaald en via Wanhatti per boot over de Cottica naar Lantiwee gebracht. Daar beleeft u het dorp met de mensen die er wonen, en 's avonds bent u weer terug in de stad.</p>
     <div class="cta">
@@ -397,7 +405,7 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
   <div class="wrap center">
     <span class="kicker" data-i18n="k1">De dagtour</span>
     <h2 data-i18n="tourH">Wat u kunt doen</h2>
-    <p class="intro" style="font-weight:600;color:var(--forest)" data-i18n="tourUnique">De enige tour aan de Cottica-rivier.</p>
+    <p class="intro" style="font-weight:600;color:var(--forest)" data-i18n="tourUnique">Een dagtour die van begin tot eind door de bewoners zelf wordt geleid.</p>
     <p class="intro" data-i18n="tourP">Dit zijn de activiteiten die de bewoners aanbieden. Elke tour is net even anders: het programma stemmen we vooraf met de bewoners af, zodat u een dag krijgt die echt door het dorp wordt gedragen.</p>
 
     <div class="acts">
@@ -467,10 +475,34 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
       <div><dt data-i18n="f3k">Duur</dt><dd data-i18n="f3v">Eén dag<small>Vertrek in de ochtend, terug in de avond</small></dd></div>
       <div><dt data-i18n="f4k">Gidsen</dt><dd data-i18n="f4v">Bewoners van Lantiwee<small>In het Nederlands en Aukaans</small></dd></div>
       <div><dt data-i18n="f5k">Groepsgrootte</dt><dd data-i18n="f5v">Kleine groepen<small>Het dorp bepaalt het maximum</small></dd></div>
-      <div><dt data-i18n="f6k">Prijs</dt><dd data-i18n="f6v">Op aanvraag<small>Inclusief vervoer en boottocht</small></dd></div>
-      <div><dt data-i18n="f7k">Beste periode</dt><dd data-i18n="f7v">Droge tijd<small>In de regentijd stemmen we de datum met u af</small></dd></div>
-      <div><dt data-i18n="f8k">Meenemen</dt><dd data-i18n="f8v">Stevige schoenen<small>Zonnebrand, muggenmiddel en water</small></dd></div>
+      <div><dt data-i18n="f6k">Prijs</dt><dd data-i18n="f6v">Op aanvraag<small>Inclusief vervoer, boottocht en alle activiteiten</small></dd></div>
+      <div><dt data-i18n="f7k">Beste periode</dt><dd data-i18n="f7v">Droge tijd<small>Bij slecht weer zoeken we samen een andere datum</small></dd></div>
+      <div><dt data-i18n="f8k">Meenemen</dt><dd data-i18n="f8v">Voldoende water<small>Zonnebrand, schoenen die vies mogen worden, contant geld</small></dd></div>
     </dl>
+    <div class="incl">
+      <div class="inclcard">
+        <h3 data-i18n="inH">Inbegrepen in de prijs</h3>
+        <ul>
+          <li data-i18n="in1">Vervoer per auto van en naar Paramaribo</li>
+          <li data-i18n="in2">De boottocht van Wanhatti naar Lantiwee en terug</li>
+          <li data-i18n="in3">Alle activiteiten van de dag</li>
+          <li data-i18n="in4">Drinken in het dorp</li>
+        </ul>
+      </div>
+      <div class="inclcard">
+        <h3 data-i18n="brH">Neem mee</h3>
+        <ul>
+          <li data-i18n="br1">Voldoende water: in het dorp krijgt u drinken, maar neem zelf ook genoeg mee</li>
+          <li data-i18n="br2">Zonnebrand</li>
+          <li data-i18n="br3">Schoenen die vies mogen worden</li>
+          <li data-i18n="br4">Contant geld</li>
+        </ul>
+      </div>
+      <div class="inclcard">
+        <h3 data-i18n="payH">Betalen en slecht weer</h3>
+        <p data-i18n="payP">U betaalt niet vooraf. Gooit slecht weer of hoog water roet in het eten, dan zoeken we samen een andere datum. Komt er geen geschikte datum, dan krijgt u uw geld terug.</p>
+      </div>
+    </div>
     <div class="cta-row"><a class="btn dark" href="#boeken" data-i18n="m5">Boek de dagtour</a></div>
   </div>
 </section>
@@ -664,7 +696,7 @@ const T = { nl:{}, en:{
   top1:"Day tour from Paramaribo · led by the residents of Lantiwee",
   m1:"The day tour", m2:"History", m3:"Village & harvest", m4:"Practical", m5:"Book the day tour",
   heroAlt:"The Cottica river at Lantiwee with canoes on the bank",
-  eyebrow:"The only day tour on the Cottica",
+  eyebrow:"Day tour from Paramaribo, led by residents",
   h1:"One day in Lantiwee, with the people who live there",
   lead:"Get picked up in Paramaribo and taken via Wanhatti by boat along the Cottica to Lantiwee. There you experience the village with the people who live there, and in the evening you are back in the city.",
   cta1:"Book the day tour", cta2:"See the programme",
@@ -676,7 +708,7 @@ const T = { nl:{}, en:{
   p1h:"One full day", p1p:"You leave Paramaribo in the morning and are back in the evening. No overnight stay needed.",
   p2h:"Led by residents", p2p:"Your guides, cooks and fishermen live in Lantiwee. They tell their own story.",
   p3h:"At the pace of the village", p3p:"No standard show: every tour is different and shows how the village really lives.",
-  k1:"The day tour", tourH:"What you can do", tourUnique:"The only tour on the Cottica river.", tourP:"These are the activities residents offer. Every tour is a little different: the programme is planned in advance with residents, so your day is truly carried by the village.",
+  k1:"The day tour", tourH:"What you can do", tourUnique:"A day tour led from start to finish by the residents themselves.", tourP:"These are the activities residents offer. Every tour is a little different: the programme is planned in advance with residents, so your day is truly carried by the village.",
   n1:"Activity", a1h:"Boat trip from Wanhatti", a1p:"After the drive from Paramaribo you board a dugout canoe in Wanhatti and travel along the Cottica to Lantiwee, on the deepest river in Suriname, past rainforest-lined banks, watching beautiful birds over the water.", alt1:"Visitors in a dugout canoe on the river",
   n2:"Activity", a2h:"Village tour", a2p:"A resident walks you past the houses, the old places and the farm plots. Hear what grows here and how the village lives.", alt2:"A wooden house with colourful laundry on the line in Lantiwee",
   n3:"Activity", a3h:"Fishing", a3p:"Fish the way residents have for generations, from the bank or the boat, with people who know this river inside out.", alt3:"A resident in a dugout canoe on the Cottica at sunset",
@@ -726,9 +758,9 @@ const T = { nl:{}, en:{
   f3k:"Duration", f3v:"One day<small>Leave in the morning, back in the evening</small>",
   f4k:"Guides", f4v:"Residents of Lantiwee<small>In Dutch and Aukan</small>",
   f5k:"Group size", f5v:"Small groups<small>The village sets the maximum</small>",
-  f6k:"Price", f6v:"On request<small>Including transport and boat trip</small>",
-  f7k:"Best time", f7v:"Dry season<small>In the rainy season we agree the date with you</small>",
-  f8k:"Bring", f8v:"Sturdy shoes<small>Sunscreen, mosquito repellent and water</small>",
+  f6k:"Price", f6v:"On request<small>Including transport, boat trip and all activities</small>",
+  f7k:"Best time", f7v:"Dry season<small>In bad weather we find another date together</small>",
+  f8k:"Bring", f8v:"Plenty of water<small>Sunscreen, shoes that may get dirty, cash</small>", inH:"Included in the price", in1:"Transport by car to and from Paramaribo", in2:"The boat trip from Wanhatti to Lantiwee and back", in3:"All activities of the day", in4:"Drinks in the village", brH:"Bring", br1:"Plenty of water: you get drinks in the village, but bring enough of your own", br2:"Sunscreen", br3:"Shoes that may get dirty", br4:"Cash", payH:"Payment and bad weather", payP:"You do not pay in advance. If bad weather or high water gets in the way, we find another date together. If no suitable date works out, you get your money back.",
   k7:"Book the day tour", bookH:"Spend a day in Lantiwee",
   book1:"Tell us when you would like to come and with how many people. We will get in touch to confirm the date, the price, your pick-up point and the programme for that day.",
   bk1:"Boat trip and village tour with residents", bk2:"Transport from Paramaribo arranged", bk3:"Every tour is a little different",
