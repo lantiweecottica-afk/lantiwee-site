@@ -486,7 +486,7 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
           <li data-i18n="in1">Vervoer per auto van en naar Paramaribo</li>
           <li data-i18n="in2">De boottocht van Wanhatti naar Lantiwee en terug</li>
           <li data-i18n="in3">Alle activiteiten van de dag</li>
-          <li data-i18n="in4">Lunch en drinken in het dorp</li>
+          <li data-i18n="in4">Lunch en drinken in het dorp <small style="display:block;font-size:.85em;opacity:.85">Allergie of dieetwens? Vermeld het bij uw aanvraag.</small></li>
         </ul>
       </div>
       <div class="inclcard">
@@ -631,7 +631,7 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
     <div class="side">
       <span class="eyebrow" data-i18n="k7">Boek de dagtour</span>
       <h2 data-i18n="bookH">Kom een dag naar Lantiwee</h2>
-      <p data-i18n="book1">Laat weten wanneer u wilt komen en met hoeveel personen. We nemen contact met u op om de datum, de prijs, uw ophaalpunt en het programma van die dag te bevestigen.</p>
+      <p data-i18n="book1">Laat weten wanneer u wilt komen en met hoeveel personen. We nemen contact met u op om de datum, de prijs, uw ophaalpunt en het programma van die dag te bevestigen. Heeft iemand in uw groep een allergie of dieetwens? Vermeld dat dan in het berichtveld, zodat we er bij het eten rekening mee kunnen houden.</p>
       <ul>
         <li data-i18n="bk1">Boottocht en dorpstour met bewoners</li>
         <li data-i18n="bk2">Vervoer vanuit Paramaribo geregeld</li>
@@ -647,7 +647,7 @@ footer a{color:#c9d8ce;text-decoration:none} footer a:hover{color:#fff}
       <div class="f"><label for="date" data-i18n="lDate">Voorkeursdatum</label><input id="date" name="preferred_date" type="date" required></div>
       <div class="f"><label for="people" data-i18n="lPeople">Aantal personen</label><input id="people" name="people" type="number" min="1" max="30" value="2" required></div>
       <div class="f"><label for="pickup" data-i18n="lPickup">Ophalen in Paramaribo</label><input id="pickup" name="pickup" data-i18n-ph="phPickup" placeholder="Hotel of adres"></div>
-      <div class="f full"><label for="msg" data-i18n="lMsg">Is er iets wat we moeten weten?</label><textarea id="msg" name="message" data-i18n-ph="phMsg" placeholder="Dieet, kinderen, mobiliteit, vragen"></textarea></div>
+      <div class="f full"><label for="msg" data-i18n="lMsg">Allergieën, dieetwensen of iets anders wat we moeten weten?</label><textarea id="msg" name="message" data-i18n-ph="phMsg" placeholder="Bijv. notenallergie, vegetarisch, kinderen, mobiliteit, vragen"></textarea></div>
       <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="status" id="status" role="status" hidden></div>
       <button class="btn dark" type="submit" id="send" data-i18n="send">Verstuur boekingsaanvraag</button>
@@ -760,13 +760,13 @@ const T = { nl:{}, en:{
   f5k:"Group size", f5v:"Small groups<small>The village sets the maximum</small>",
   f6k:"Price", f6v:"On request<small>Including transport, boat trip, lunch and all activities</small>",
   f7k:"Best time", f7v:"Dry season<small>In bad weather we find another date together</small>",
-  f8k:"Bring", f8v:"Plenty of water<small>Sunscreen, shoes that may get dirty, cash</small>", inH:"Included in the price", in1:"Transport by car to and from Paramaribo", in2:"The boat trip from Wanhatti to Lantiwee and back", in3:"All activities of the day", in4:"Lunch and drinks in the village", brH:"Bring", br1:"Plenty of water: you get drinks in the village, but bring enough of your own", br2:"Sunscreen", br3:"Shoes that may get dirty", br4:"Cash", payH:"Payment and bad weather", payP:"You do not pay in advance. If bad weather or high water gets in the way, we find another date together. If no suitable date works out, you get your money back.",
+  f8k:"Bring", f8v:"Plenty of water<small>Sunscreen, shoes that may get dirty, cash</small>", inH:"Included in the price", in1:"Transport by car to and from Paramaribo", in2:"The boat trip from Wanhatti to Lantiwee and back", in3:"All activities of the day", in4:"Lunch and drinks in the village <small style=\"display:block;font-size:.85em;opacity:.85\">Allergy or dietary need? Mention it in your request.</small>", brH:"Bring", br1:"Plenty of water: you get drinks in the village, but bring enough of your own", br2:"Sunscreen", br3:"Shoes that may get dirty", br4:"Cash", payH:"Payment and bad weather", payP:"You do not pay in advance. If bad weather or high water gets in the way, we find another date together. If no suitable date works out, you get your money back.",
   k7:"Book the day tour", bookH:"Spend a day in Lantiwee",
-  book1:"Tell us when you would like to come and with how many people. We will get in touch to confirm the date, the price, your pick-up point and the programme for that day.",
+  book1:"Tell us when you would like to come and with how many people. We will get in touch to confirm the date, the price, your pick-up point and the programme for that day. Does anyone in your group have an allergy or dietary need? Please mention it in the message field so we can take it into account with the food.",
   bk1:"Boat trip and village tour with residents", bk2:"Transport from Paramaribo arranged", bk3:"Every tour is a little different",
   book2:"This is a request, not a payment. Nothing is charged through this form.",
-  lName:"Full name", lEmail:"Email", lPhone:"Phone / WhatsApp", lDate:"Preferred date", lPeople:"Number of people", lPickup:"Pick-up in Paramaribo", lMsg:"Anything we should know?",
-  phPickup:"Hotel or address", phMsg:"Diet, children, mobility, questions", send:"Send booking request",
+  lName:"Full name", lEmail:"Email", lPhone:"Phone / WhatsApp", lDate:"Preferred date", lPeople:"Number of people", lPickup:"Pick-up in Paramaribo", lMsg:"Allergies, dietary needs or anything else we should know?",
+  phPickup:"Hotel or address", phMsg:"E.g. nut allergy, vegetarian, children, mobility, questions", send:"Send booking request",
   foot:"A day tour organised and led by the community of Lantiwee, on the Cottica river.",
   crH:"In collaboration with", crP:"The day tour was set up by the residents of Lantiwee, together with:", cr1:"Stichting Economische Ontwikkeling Ricanau Ricanau Mofo", cr2:"Hendrik Pinas", cr3:"Student team",
   fNav:"Explore", fTouch:"Contact", fTouchP:"Questions before you book? Email us, or send a request and put your question in the message field."
@@ -777,7 +777,7 @@ const MSG = {
  en:{missing:"Please fill in your name, a valid email, a date and the number of people.", noEmail:"Online booking is not switched on yet. Your request was not sent.",
      sending:"Sending…", ok:"Request sent. We will get in touch with you.", fail:"Your request could not be sent. Please try again later, or email your request to dagtour@lantiwee.com."}
 };
-const HTML_KEYS = new Set(["f1v","f2v","f3v","f4v","f5v","f6v","f7v","f8v"]);
+const HTML_KEYS = new Set(["in4","f1v","f2v","f3v","f4v","f5v","f6v","f7v","f8v"]);
 let lang = "nl";
 document.querySelectorAll("[data-i18n]").forEach(el => { const k=el.dataset.i18n; if(!(k in T.nl)) T.nl[k] = HTML_KEYS.has(k) ? el.innerHTML : el.textContent; });
 document.querySelectorAll("[data-i18n-ph]").forEach(el => T.nl[el.dataset.i18nPh] = el.placeholder);
